@@ -240,7 +240,7 @@ function Fact({ fact, setFacts }) {
           className="source"
           href={fact.source}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           (Source)
         </a>
@@ -259,16 +259,25 @@ function Fact({ fact, setFacts }) {
           onClick={() => handleVote("votesInteresting")}
           disabled={isUpdating}
         >
-          👍 {fact.votesInteresting}
+          <span role="img" aria-label="thumbs up">
+            👍
+          </span>{" "}
+          {fact.votesInteresting}
         </button>
         <button
           onClick={() => handleVote("votesMindblowing")}
           disabled={isUpdating}
         >
-          🤯 {fact.votesMindblowing}
+          <span role="img" aria-label="mind-blown">
+            🤯
+          </span>{" "}
+          {fact.votesMindblowing}
         </button>
         <button onClick={() => handleVote("votesFalse")} disabled={isUpdating}>
-          ⛔ {fact.votesFalse}
+          <span role="img" aria-label="false">
+            ⛔
+          </span>{" "}
+          {fact.votesFalse}
         </button>
       </div>
     </li>
